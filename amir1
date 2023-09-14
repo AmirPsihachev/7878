@@ -1,0 +1,18 @@
+print("ведите два целых числа a b, b>=a" )
+
+a=int(input())
+b=int(input())
+while (a>b):
+    print("Вы ввели плохо пожалуйста попробуйте еще" )
+    a=int(input())
+    b=int(input())
+for i in range(a,b+1):
+    l=[]
+    count=0
+    for j in range(i,0,-1):
+        if i%j==0:
+            count=count+1
+            l.append(j)
+    if count==4:
+        print(i)
+        print(l)
