@@ -1,59 +1,34 @@
 print("Ведите длину списка")
-l=int(input())
+length=int(input())
 Origin=[]
 print("ВВедите элементы списка(после каждого следующего нажимайте enter)")
-for i in range(l):
+for i in range(length):
     a=input()
     Origin.append(a)
-nibba=[ 0 for _ in Origin]
-c=1
-perm=[]
-while c<l:
-    count=0
-    if nibba[c]<c:
-        if c%2==0:
-            j=0
-        else:
-            j=nibba[c]
-        Origin[c], Origin[j]=Origin[j], Origin[c]
-        nibba[c]+=1
-        c=1
-        for i in range(len(perm)):
-            if perm[i]==Origin:
-                count+=1
-        if count == 0:
-            perm.append(list(Origin))
+def permutations(x):
+    nibba=[ 0 for _ in x]
+    c=1
+    perm=[]
+    while c<length:
+        count=0
+        if nibba[c]<c:
+            if c%2==0:
+                j=0
+            else:
+                j=nibba[c]
+            x[c], x[j]=x[j], x[c]
+            nibba[c]+=1
+            c=1
+            for i in range(len(perm)):
+                if perm[i]==x:
+                    count+=1
+            if count == 0:
+                perm.append(list(x))
 
-    else:
-        nibba[c]=0
-        c+=1
-print(perm)
-print("Ведите длину списка")
-l=int(input())
-Origin=[]
-print("ВВедите элементы списка(после каждого следующего нажимайте enter)")
-for i in range(l):
-    a=input()
-    Origin.append(a)
-nibba=[ 0 for _ in Origin]
-c=1
-perm=[]
-while c<l:
-    count=0
-    if nibba[c]<c:
-        if c%2==0:
-            j=0
         else:
-            j=nibba[c]
-        Origin[c], Origin[j]=Origin[j], Origin[c]
-        nibba[c]+=1
-        c=1
-        for i in range(len(perm)):
-            if perm[i]==Origin:
-                count+=1
-        if count == 0:
-            perm.append(list(Origin))
+            nibba[c]=0
+            c+=1
+    print(perm) 
+permutations(Origin) 
+#given task answer:360
 
-    else:
-        nibba[c]=0
-        c+=1
