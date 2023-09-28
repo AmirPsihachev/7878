@@ -30,5 +30,5 @@ def permutations(x):
             c+=1
     print(perm) 
 permutations(Origin) 
-#given task answer:360
+#given task answer:180
 
