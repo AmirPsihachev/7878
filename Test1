@@ -1,0 +1,35 @@
+#N8:
+list=input()
+if len(list)>len(set(list)):
+    print("YES")
+else:
+    print("NO")
+#N10
+x1=int(input())
+y1=int(input())
+x2=int(input())
+y2=int(input())
+if (x1+y1)%2==(x2+y2)&2:
+    print("yes")
+else:
+    print("No")
+#N11
+c=0
+x=input()
+s=int(input())
+for i in range(len(x)):
+    p=(i+len(x))//2
+    while c!=1:
+        if x[p]+x[i]==s:
+            c==1
+            print(x[i],x[p])
+            break
+        if x[p]+x[i]>s:
+            p=(p+i)//2
+        else:
+            p=(p+len(x))//2
+if c==0:
+    print("no")
+
+    
+
