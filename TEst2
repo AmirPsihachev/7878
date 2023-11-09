@@ -1,0 +1,16 @@
+# 7878
+#N20
+#recursed
+n=int(input())
+def f(x):
+    if x in (1,2):
+        return(1)
+    return f(x-1)+f(x-2)
+print(f(n))
+#dinamic
+import math
+f1=(1+math.sqrt(5))/2
+f2=(1-math.sqrt(5))/2
+n=int(input())
+F=(f1**n+f2**n)/(math.sqrt(5))
+print(int(F))
