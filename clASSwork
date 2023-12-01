@@ -1,0 +1,31 @@
+class Triangle():
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+        if type(self.a) in (int, float) and type(self.b) in (int, float) and type(self.c) in (int, float):
+            if self.a < 0 or self.b < 0 or self.c < 0:
+                raise ValueError("No negative numbers")
+            elif self.a + self.b <= self.c or self.a + self.c <= self.b or self.b + self.c <= self.a:
+                raise ValueError("not existing triangle")
+            else:
+                print("okay")
+        else:
+            raise ValueError("abc must be numbers")
+
+    def __area__(self):
+        s = (((self.a + self.b + self.c) * (self.a + self.b - self.c) * (self.a + self.c - self.b) * (
+                    self.b + self.c - self.a)) ** 0.5) / 4
+        return s
+
+    def p(self):
+        p = self.a + self.b + self.c
+        return p
+
+    def __repr__(self):
+        return f"triamgle has sides\n{self.a, self.b, self.c}"
+
+
+t = [Triangle(1, 2, 2), Triangle(1, 4, 4), Triangle(2, 3, 4)]
+
+print(sorted(t, key=Triangle.p))
