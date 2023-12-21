@@ -1,0 +1,44 @@
+class Candy:
+    def __init__ (self, Name, Weight, Price):
+        if isinstance(Weight, int or float) and isinstance(Price, int or float) and isinstance(Name, str):
+            self.Name = Name
+            self.Weight = Weight
+            self.Price = Price
+        else:
+            raise ValueError("bad variables type")
+class Chocolate(Candy):
+    def __init__ (self, cocoa_percentage, chocolate_type,*args):
+        if cocoa_percentage<100 and isinstance(cocoa_percentage, int or float) and isinstance(chocolate_type, str):
+            super().__init__(*args)
+            self.cocoa_percentage = cocoa_percentage
+            self.chocolate_type = chocolate_type
+        else:
+            raise ValueError("change variables type")
+    def __lt__(self, other):
+         return other.Price>self.Price     
+class HardCandy(Candy):
+    def __init__ (self, flavor, filled,*args):
+        if isinstance(flavor, str) and isinstance(filled, str):
+            super().__init__(*args)
+            self.flavor = flavor
+            self.filled = filled
+        else:
+            raise ValueError("change variables type")
+    def __lt__(self, other):
+         return other.Price > self.Price      
+class Gummy(Candy):
+    def __init__ (self, flavor, shape,*args):
+        if isinstance(flavor, str) and isinstance(shape, str):
+            super().__init__(*args)
+            self.flavor = flavor
+            self.shape = shape
+        else:
+            raise ValueError("bad variables type")
+    def __lt__(self, other):
+         return self.Price<other.Price     
+a=Gummy("1","2","3",5,6) 
+b=Chocolate(1,"2","3",4,5)
+c=[b,a]
+print(sorted.c) 
+
+
