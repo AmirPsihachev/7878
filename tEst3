@@ -1,0 +1,29 @@
+class NaturalNumber:    
+    def __init__(self, value):
+        self.valu= valu
+    def summ(self, n: int):
+        return summ(int(digit) for digit in str(n))
+    def __eq__(self, other):        if isinstance(other, NaturalNumber):
+            return self.summ(self.valu) == other.summ(other.valu)       
+    elif isinstance(other, int):
+            return self.summ(self.valu) == self.summ(othe.valu)    
+    else:
+            return False
+    def __lt__(self, other):
+        if isinstance(other, NaturalNumber):         
+            return self.summ(self.valu) < other.summ(other.valu)
+        elif isinstance(other, int):           
+            return self.summ(self.valu) < self.summ(other.valu)
+        else:          
+            return False
+
+    def __le__(self, other):        
+        if isinstance(other, NaturalNumber):
+            return self.digit_sum(self.valu) <= other.digit_sum(other.valu)        
+        elif isinstance(other, int):
+            return self.digit_sum(self.valu) <= self.digit_sum(other.valu)       
+        else:
+            return False
+    def __repr__(self):       
+    return str(self.valu)
+
